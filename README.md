@@ -1,4 +1,16 @@
 # Physim (Physics - Simulator)
+## Web App (app.py)
+
+A browser-based interface for the physics lab built with Streamlit.
+No installation needed — just open the link and use it.
+
+Enter any combination of the 8 projectile variables as numbers or
+symbolic expressions (e.g. 2*x + 5). Leave the rest blank and the
+solver figures them out. Results are shown across three tabs —
+symbolic formulas, trajectory and velocity plots, and a parameter
+sweep if a free variable remains.
+
+Live at: https://your-app-name.streamlit.app
 
 # Computational Physics Lab
 A Simulation-based (for now, Only) classical physics exploration tool-
