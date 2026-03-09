@@ -30,11 +30,11 @@ Python · NumPy · SciPy · Matplotlib · SymPy
 
 ## File Structure
 
-integrators.py  — numerical ODE integration wrapper around solve_ivp
-projectile.py   — projectile motion equations and event detection
-solver.py       — SymPy-based symbolic equation handling
-plots.py        — plotting utilities using Matplotlib
-main.py         — terminal interface for running simulations
+* integrators.py  — numerical ODE integration wrapper around solve_ivp
+* projectile.py   — projectile motion equations and event detection
+* solver.py       — SymPy-based symbolic equation handling
+* plots.py        — plotting utilities using Matplotlib
+* main.py         — terminal interface for running simulations
 
 This project was developed as a learning exercise in computational physics.
 AI tools were occasionally used for coding,suggestions and debugging during development.
