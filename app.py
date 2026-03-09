@@ -685,7 +685,7 @@ with right_col:
 
                     fig_v = make_velocity_fig(res.time, res.vx, res.vy,
                                 f"Velocity — {title_str}")
-                    st.image(fig_v, use_container_width=True)
+                    st.image(fig_to_st(fig_v), use_container_width=True)
 
         # ────────────────────────────────
         # TAB 3 — Parameter Sweep
