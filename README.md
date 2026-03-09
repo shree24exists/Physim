@@ -10,7 +10,7 @@ solver figures them out. Results are shown across three tabs —
 symbolic formulas, trajectory and velocity plots, and a parameter
 sweep if a free variable remains.
 
-Live at: https://your-app-name.streamlit.app
+Live at: https://shree-physim.streamlit.app/
 
 # Computational Physics Lab
 A Simulation-based (for now, Only) classical physics exploration tool-
