@@ -35,7 +35,7 @@ Python · NumPy · SciPy · Matplotlib · SymPy
 ## Systems Implemented
 
 * [x] Projectile Motion
-* [ ] Pendulum (planned)
+* [x] Stellar Evolution 
 * [ ] Spring-Mass (planned)
 * [ ] Orbital Motion (planned)
 * [ ] QFT/Quantum Related Simulations (Maybe)
