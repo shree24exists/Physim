@@ -20,8 +20,9 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import io
 
-from solver     import ProjectileSolver, parse_expr
-from projectile import simulate
+from solver        import ProjectileSolver, parse_expr
+from projectile    import simulate
+from stellar_page  import render_stellar_page
 
 # ── Page config ───────────────────────────────────────────────────────────
 st.set_page_config(
@@ -311,10 +312,43 @@ st.markdown("""
 st.markdown("""
 <div class="lab-header">
   <div class="lab-title">⟨ <span>Computational</span> Physics Lab ⟩</div>
-  <div class="lab-subtitle">Projectile Motion · Symbolic + Numeric Simulation</div>
+  <div class="lab-subtitle">Projectile Motion · Stellar Evolution · Symbolic + Numeric Simulation</div>
 </div>
 """, unsafe_allow_html=True)
 
+
+
+# ── Page switcher ──────────────────────────────────────────────────────────
+st.markdown("""
+<style>
+  div[data-testid="stHorizontalBlock"] > div:first-child { padding-right: 0 !important; }
+  .page-btn-active > button {
+    background: #38bdf8 !important;
+    color: #0d0f14 !important;
+  }
+  .page-btn-inactive > button {
+    background: #131720 !important;
+    color: #4a5568 !important;
+    border: 1px solid #1e2535 !important;
+  }
+</style>
+""", unsafe_allow_html=True)
+
+_pages = ["🚀  Projectile Motion", "🌟  Stellar Evolution"]
+_pc1, _pc2, _spacer = st.columns([1.2, 1.2, 4])
+with _pc1:
+    if st.button("🚀  Projectile Motion", key="page_proj",
+                 use_container_width=True):
+        st.session_state['page'] = 'projectile'
+with _pc2:
+    if st.button("🌟  Stellar Evolution", key="page_stellar",
+                 use_container_width=True):
+        st.session_state['page'] = 'stellar'
+
+if 'page' not in st.session_state:
+    st.session_state['page'] = 'projectile'
+
+st.markdown("<hr style='margin:0.75rem 0 1.5rem 0'>", unsafe_allow_html=True)
 
 # ── Helper: collect user symbols ───────────────────────────────────────────
 def collect_user_symbols(raw_inputs: dict) -> dict:
@@ -415,7 +449,16 @@ def make_sweep_fig(vals, ranges, heights, times, free_sym):
     return fig
 
 
-# ── Layout: two columns ────────────────────────────────────────────────────
+
+
+# ── Page routing ───────────────────────────────────────────────────────────
+_current_page = st.session_state.get('page', 'projectile')
+
+if _current_page == 'stellar':
+    render_stellar_page()
+    st.stop()
+
+# ── Projectile Motion ───────────────────────────────────────────────────────
 left_col, right_col = st.columns([1, 1.6], gap="large")
 
 
